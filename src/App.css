@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Harlow Solid Italic";
+  src: url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.eot");
+  src: url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/208c60a0a6b9e5ebbc434f9f24c2aeae.svg#Harlow Solid Italic")
+      format("svg");
+}
+
+.App {
+  text-align: center;
+  /* font-family: "Dancing Script", cursive; */
+  font-family: "Harlow Solid Italic", cursive;
+  min-width: 480px;
+  scroll-behavior: smooth;
+
+  .container-fluid {
+    width: 100vw;
+  }
+}
+
+.App-header {
+  /*background-color: #282c34;*/
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
