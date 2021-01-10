@@ -1,0 +1,456 @@
+/* GENERAL SETTINGS */
+main > .container {
+  padding: 60px 15px 0;
+}
+
+body {
+    font-family: 'Dancing Script', cursive;
+    min-width: 480px;
+}
+
+.navbar {
+    box-shadow: 0px -3px 9px grey;
+}
+
+.navbar-nav {
+    width: 100%;
+}
+
+.nav-link {
+    font-size: 32px;
+    font-weight: 700;
+    margin-right: 30px;
+}
+
+main {
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main .container-fluid {
+    margin-top: 100px;
+    padding: 0px;
+    width: 100%;
+}
+
+main .row {
+    height: 80vh;
+    width: 100%;
+    margin: 0px;
+}
+
+.red {
+    color: rgba(134, 3, 3, 1) !important;
+}
+.footer {
+    background-color: rgba(134,3,3,1);
+    font-size: 20px;
+    text-align: right;
+    padding-right: 5%;
+    width: 100%;
+}
+
+/* CSS specific to index page */
+
+.index main .img {
+    margin-left: 20px;
+    margin-right: 10px;
+    height: 80vh;
+    max-height: 795px;
+    background: url("landingpage.png") no-repeat left center ;
+    margin: 0px;
+    border-radius: 5px;
+}
+
+.index main .text {
+    margin-left: 10px;
+    margin-right: 20px;
+    font-size: 32px;
+    text-align: left;
+}
+
+@media (max-width: 767px) {
+    .index main .img {
+        height: 40vh !important;
+    }
+}
+
+/* CSS specific to skills page */
+.skills main .row {
+    height: 70vh;
+}
+
+.skills h4 {
+    text-align: left;
+    margin-top: 135px;
+    margin-left: 40px;
+}
+.skills main .diagram {
+    height: 70vh;
+    max-height: 795px;
+    margin: 0px;
+    border-radius: 5px;
+    background-image: linear-gradient(white, rgba(92,222,255, 1));
+    box-shadow: inset 0px 0px 3px 3px rgba(100, 100, 100, 1);
+    z-index: 0;
+    position: relative;
+}
+
+.skills main .diagram .ball {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+}
+
+.b1, .b2, .b3, .b4, .b5,
+.b6, .b7, .b8, .b9, .b10 {
+    background-image: url(Bubble.png);
+    background-repeat: no-repeat;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.b1 {
+    z-index: 1;
+    height: 100px;
+    width: 100px;
+    background-image: url(bubble_html.png);
+    background-size: 100px 100px;
+    animation-name: run_b1;
+    animation-duration: 55s;
+}
+
+@keyframes run_b1 {
+    0% {left: calc(0%); top: calc(0%);}
+    33% {left: calc(80% - 100px); top: calc(70% - 100px);}
+    66% {left: calc(40% - 100px); top: calc(40% - 100px);}
+    100% {left: calc(0%); top: calc(0%);}
+}
+
+.b2 {
+    z-index: 2;
+    height: 80px;
+    width: 80px;
+    background-image: url(bubble_css.png);
+    background-size: 80px 80px;
+    animation-name: run_b2;
+    animation-duration: 45s;
+}
+
+@keyframes run_b2 {
+    0% {left: calc(100% - 80px); top: calc(50%);}
+    33% {left: calc(0% - 0px); top: calc(90% - 80px);}
+    66% {left: calc(40% - 80px); top: calc(40% - 80px);}
+    100% {left: calc(100% - 80px); top: calc(50%);}
+}
+
+.b3 {
+    z-index: 3;
+    height: 60px;
+    width: 60px;
+    background-image: url(bubble_js.png);
+    background-size: 60px 60px;
+    animation-name: run_b3;
+    animation-duration: 65s;
+}
+
+@keyframes run_b3 {
+    0% {left: calc(50% - 0px); top: calc(100% - 60px);}
+    33% {left: calc(0% - 0px); top: calc(50% - 0px);}
+    66% {left: calc(100% - 60px); top: calc(70% - 0px);}
+    100% {left: calc(50% - 0px); top: calc(100% - 60px);}
+}
+
+.b4 {
+    z-index: 4;
+    height: 50px;
+    width: 50px;
+    background-image: url(bubble_react.png);
+    background-size: 50px 50px;
+    animation-name: run_b4;
+    animation-duration: 45s;
+}
+
+@keyframes run_b4 {
+    0% {left: calc(0% - 0px); top: calc(70% - 50px);}
+    33% {left: calc(100% - 50px); top: calc(10% - 50px);}
+    66% {left: calc(70% - 50px); top: calc(30% - 50px);}
+    100% {left: calc(0% - 0px); top: calc(70% - 50px);}
+}
+
+.b5 {
+    z-index: 5;
+    height: 50px;
+    width: 50px;
+    background-image: url(bubble_python.png);
+    background-size: 50px 50px;
+    animation-name: run_b5;
+    animation-duration: 25s;
+}
+
+@keyframes run_b5 {
+    0% {left: calc(100% - 50px); top: calc(0% - 0px);}
+    33% {left: calc(50% - 0px); top: calc(50% - 50px);}
+    66% {left: calc(70% - 50px); top: calc(30% - 50px);}
+    100% {left: calc(100% - 50px); top: calc(0% - 0px);}
+}
+
+.b6 {
+    z-index: 6;
+    height: 50px;
+    width: 50px;
+    background-image: url(bubble_django.png);
+    background-size: 50px 50px;
+    animation-name: run_b6;
+    animation-duration: 25s;
+}
+
+@keyframes run_b6 {
+    0% {left: calc(50% - 0px); top: calc(50% - 0px);}
+    33% {left: calc(0% - 0px); top: calc(10% - 0px);}
+    66% {left: calc(30% - 0px); top: calc(0% - 0px);}
+    100% {left: calc(50% - 0px); top: calc(50% - 0px);}
+}
+
+.b7 {
+    z-index: 7;
+    height: 50px;
+    width: 50px;
+    background-size: 50px 50px;
+    animation-name: run_b7;
+    animation-duration: 25s;
+}
+
+@keyframes run_b7 {
+    0% {left: calc(70% - 50px); top: calc(70% - 50px);}
+    33% {left: calc(0% - 0px); top: calc(50% - 0px);}
+    66% {left: calc(100% - 50px); top: calc(60% - 0px);}
+    100% {left: calc(70% - 50px); top: calc(70% - 50px);}
+}
+
+.b8 {
+    z-index: 8;
+    height: 50px;
+    width: 50px;
+    background-size: 50px 50px;
+    animation-name: run_b8;
+    animation-duration: 25s;
+}
+
+@keyframes run_b8 {
+    0% {left: calc(70% - 50px); top: calc(90% - 50px);}
+    33% {left: calc(0% - 0px); top: calc(70% - 0px);}
+    66% {left: calc(100% - 50px); top: calc(80% - 0px);}
+    100% {left: calc(70% - 50px); top: calc(90% - 50px);}
+}
+
+.b9 {
+    z-index: 9;
+    height: 50px;
+    width: 50px;
+    background-size: 50px 50px;
+    animation-name: run_b9;
+    animation-duration: 65s;
+}
+
+@keyframes run_b9 {
+    0% {left: calc(30% - 0px); top: calc(100% - 50px);}
+    16% {left: calc(0% - 0px); top: calc(70% - 50px);}
+    33% {left: calc(40% - 0px); top: calc(0% - 0px);}
+    50% {left: calc(100% - 50px); top: calc(30% - 0px);}
+    66% {left: calc(0% - 0px); top: calc(40% - 0px);}
+    74% {left: calc(100% - 50px); top: calc(80% - 50px);}
+    100% {left: calc(30% - 0px); top: calc(100% - 50px);}
+}
+
+.b10 {
+    z-index: 10;
+    height: 50px;
+    width: 50px;
+    background-size: 50px 50px;
+    animation-name: run_b10;
+    animation-duration: 75s;
+}
+
+@keyframes run_b10 {
+    0% {left: calc(100% - 50px); top: calc(70% - 50px);}
+    14% {left: calc(0% - 0px); top: calc(50% - 0px);}
+    28% {left: calc(100% - 50px); top: calc(30% - 0px);}
+    42% {left: calc(10% - 0px); top: calc(0% - 0px);}
+    56% {left: calc(0% - 0px); top: calc(10% - 0px);}
+    71% {left: calc(30% - 0px); top: calc(100% - 50px);}
+    85% {left: calc(50% - 0px); top: calc(50% - 0px);}
+    100% {left: calc(100% - 50px); top: calc(70% - 50px);}
+}
+
+.skills main .rating {
+    font-weight: 700;
+    font-size: 32px;
+    color: rgba(134, 3, 3, 1);
+    margin-left: 50px;
+}
+
+.skills main .rating .text {
+    width: 100px;
+    text-align: right;
+}
+
+.skills main .circle {
+    height: 20px;
+    width: 20px;
+    border: 2px solid rgba(115,115,115,1);
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.skills main .fill {
+    background-color: rgba(134, 3, 3, 1);
+}
+
+@media (max-width: 767px) {
+    .skills main .diagram {
+        height: 40vh !important;
+    }
+}
+
+/* CSS specific to learning page */
+.learning main .img {
+    border-radius: 5px;
+    height: 60vh;
+    width: 700px;
+    position: fixed;
+    top: 150px;
+    background-image: url(learning_background.png);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+.learning section {
+    z-index: 1;
+    position: relative;
+}
+
+.learning .content {
+    position: sticky;
+    position: -webkit-sticky;
+    width: 100%;
+    top: 33.3%;
+}
+
+.learning p {
+    font-size: 1.5em;
+}
+
+.learning section:nth-of-type(1) {
+    height: 1200px;
+}
+.learning section:nth-of-type(2) {
+    height: 1200px;
+}
+.learning section:nth-of-type(3) {
+    height: 1200px;
+}
+.learning section:nth-of-type(4) {
+    height: 1200px;
+}
+.learning section:nth-of-type(5) {
+    height: 1200px;
+}
+.learning section:nth-of-type(6) {
+    height: 1200px;
+}
+.learning section:nth-of-type(7) {
+    height: 1200px;
+}
+.learning section:nth-of-type(8) {
+    height: 1200px;
+}
+.learning section:nth-of-type(9) {
+    height: 1200px;
+}
+
+@media (max-width: 1440px) {
+    .learning main .img {
+        width: 45%;
+    }
+}
+
+@media (max-width: 767px) {
+    .learning main .img {
+        height: 40vh !important;
+        width: 95%;
+    }
+    .learning .content {
+        top: 65%;
+    }
+}
+
+/* CSS specific to learning page */
+.contact .row {
+    height: 70vh;
+}
+
+.contact .header {
+    width: 50%;
+    height: 75px;
+    background-color: rgba(134,3,3,1);
+    margin-bottom: -40px;
+    z-index: 5;
+}
+
+.contact h4 {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(241, 171, 171, 1);
+}
+
+.contact .body {
+    padding-top: 50px;
+    width: 100%;
+    background-color: rgba(120,120,120,1);
+    border-radius: 15px;
+    font-size: 24px;
+}
+
+.contact .body label {
+    width: 100%;
+    text-align: left;
+}
+
+.contact .body .bttn {
+    background-color: rgba(0,0,0,0.5);
+    width: 80px;
+    border-radius: 5px;
+    border: 2px solid rgba(134, 3, 3, 1);
+    color: white;
+    outline: none;
+}
+
+.contact .body .bttn:hover {
+    background-color: rgba(0,0,0,0);
+    outline: none;
+}
+
+.contact .body .bttn:active {
+    outline: none;
+    border: 2px solid white;
+    color: rgba(134,3,3,1);
+}
+
+.contact .body .bttn:visited {
+    outline: none;
+}
+
+.contact .container-fluid p {
+    font-size: 1.5em;
+}
+
+@media (max-width: 767px) {
+    .contact main .diagram {
+        height: 40vh !important;
+    }
+}
