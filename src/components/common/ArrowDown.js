@@ -16,6 +16,8 @@ const ArrowDown = ({onClick}) => {
     });
 
     const styleArrowDown = {
+        
+        color: 'rgba(120,120,120,1)',
         position: 'fixed',
         top: 'calc(100vh - 50px)',
         left: '50vw',
@@ -26,6 +28,31 @@ const ArrowDown = ({onClick}) => {
         width: '50px',
         height: '50px',
         cursor: 'pointer',
+
+        "& .badge": {
+            position: 'relative',
+            width: '300px',
+            borderRadius: '60%',
+            transform: 'rotate(-70deg)',
+        },
+
+        "& h1 span": {
+            //font: 26px Monaco, MonoSpace;
+            fontSize: '24px',
+            height: '80px',
+            position: 'absolute',
+            width: '25px',
+            left: '60px',
+            top: '-180px',
+            transformOrigin: 'bottom center',
+        }, 
+
+        "& .char1": { transform: 'rotate(-5deg)', },
+        "& .char2": { transform: 'rotate(25deg)', },
+        "& .char3": { transform: 'rotate(55deg)', },
+        "& .char4": { transform: 'rotate(85deg)', },
+        "& .char5": { transform: 'rotate(115deg)', },
+        "& .char6": { transform: 'rotate(145deg)', },
     };
 
     return ( 
@@ -37,6 +64,16 @@ const ArrowDown = ({onClick}) => {
                 })
                 .interpolate(x => `scale(${x})`)
         }} css={styleArrowDown} onClick={onClick}>
+            <div className="badge">
+                <h1>
+                    <span className="char1">s</span>
+                    <span className="char2">c</span>
+                    <span className="char3">r</span>
+                    <span className="char4">o</span>
+                    <span className="char5">l</span>
+                    <span className="char6">l</span>
+                </h1>
+            </div> 
         </animated.div>
      );
 }
