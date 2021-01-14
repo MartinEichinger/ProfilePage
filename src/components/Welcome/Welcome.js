@@ -27,18 +27,19 @@ const Welcome = ({ scroll, posWelcome, posSkill, posRef }) => {
 		width: "100%",
 
 		"& h1": {
-			fontSize: "144px",
+			fontSize: "12.5vh",
 			textAlign: "left",
 			position: "sticky",
-			top: "2vh",
-			marginLeft: "2vw",
+			top: "0px",
+			paddingTop: "2vh",
+			margin: "0 0 0 2vw",
 			color: "rgba(3, 103, 134, 0.2)",
 			opacity: h1Opacity,
 		},
 
 		"& .row-out": {
 			maxWidth: "1440px",
-			height: "500vh",
+			height: "485.5vh",
 			marginLeft: "auto",
 			marginRight: "auto",
 			paddingLeft: "2vw",
@@ -76,17 +77,18 @@ const Welcome = ({ scroll, posWelcome, posSkill, posRef }) => {
 	var imgWindow = document.getElementById("img")?.clientWidth - 30;
 	var styleFixImg, styleFixText;
 
-	if (scroll < 6478) {
+	console.log("Welcome/scroll: ", scroll, posWelcome, posSkill);
+	if (scroll < posSkill) {
 		styleFixImg = {
 			position: "sticky",
 			width: imgWindow,
 			top: 0.25 * vwh, //'25vh',
 		};
-	} else if (scroll >= 6478) {
+	} else if (scroll >= posSkill) {
 		styleFixImg = {
 			position: "sticky",
 			width: imgWindow,
-			top: 0.25 * vwh - (scroll - 6478),
+			top: 0.25 * vwh - (scroll - posSkill),
 		};
 	}
 

@@ -16,18 +16,18 @@ const Learning = ({ scroll, posRef }) => {
 		margin: "0px",
 
 		"& h1": {
-			fontSize: "144px",
+			fontSize: "12.5vh",
 			textAlign: "left",
 			position: "sticky",
 			top: "2vh",
-			marginLeft: "2vw",
+			margin: "0 0 0 2vw",
 			color: "rgba(3, 134, 71, 0.2)",
 			//opacity: h1Opacity,
 		},
 
 		"& .row-out": {
 			maxWidth: "1440px",
-			height: "900vh",
+			height: "885.5vh",
 			marginLeft: "auto",
 			marginRight: "auto",
 			paddingLeft: "2vw",

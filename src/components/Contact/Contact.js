@@ -17,11 +17,11 @@ const Contact = ({ scroll, posRef }) => {
 		backgroundColor: "rgba(134, 3, 3, 0.1)",
 
 		"& h1": {
-			fontSize: "144px",
+			fontSize: "12.5vh",
 			textAlign: "left",
 			position: "sticky",
 			top: "2vh",
-			marginLeft: "2vw",
+			margin: "0 0 0 2vw",
 			color: "rgba(134, 3, 3, 0.2)",
 			//opacity: this.h1Opacity,
 		},
@@ -35,12 +35,24 @@ const Contact = ({ scroll, posRef }) => {
 			marginLeft: "auto",
 			marginRight: "auto",
 			paddingLeft: "2vw",
+			height: "85.5vh",
 
 			[mq[5]]: {
 				marginRight: "350px",
 			},
 			[mq[4]]: {
 				marginRight: "210px",
+			},
+
+			"& .body": {
+				width: "100%",
+			},
+
+			"& input, textarea, label": {
+				width: "80%",
+				marginLeft: "auto",
+				marginRight: "auto",
+				textAlign: "left",
 			},
 		},
 	};
@@ -66,7 +78,7 @@ const Contact = ({ scroll, posRef }) => {
 				</div>
 				<div class="col-md-6 d-flex flex-column align-items-center">
 					<div class="header d-flex align-items-center">
-						<h4>Contact me!</h4>
+						<p>Contact me!</p>
 					</div>
 					<div class="body">
 						<div class="mb-3 ms-5 me-5">

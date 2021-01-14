@@ -56,6 +56,9 @@ class Navigation extends Component {
 			"& .learning.active": {
 				fill: "white !important",
 			},
+			"& .contact.active": {
+				fill: "rgba(134,3,3,1) !important",
+			},
 			"& .navtop.active": {
 				fill: "white !important",
 			},
@@ -86,10 +89,18 @@ class Navigation extends Component {
 		this.props.onClick(4);
 	};
 
+	onContact = () => {
+		//console.log("Nav/click");
+		this.props.onClick(5);
+	};
+
 	onHover = (arg) => {
 		//console.log("hover", arg);
 		var el;
-		if (arg === "learning") {
+		if (arg === "contact") {
+			el = document.getElementById("ContactTxt");
+			el.classList.add("active");
+		} else if (arg === "learning") {
 			el = document.getElementById("LearningTxt");
 			el.classList.add("active");
 		} else if (arg === "projects") {
@@ -110,7 +121,10 @@ class Navigation extends Component {
 	onHoverOut = (arg) => {
 		//console.log("hoverOut", arg);
 		var el;
-		if (arg === "learning") {
+		if (arg === "contact") {
+			el = document.getElementById("ContactTxt");
+			el.classList.remove("active");
+		} else if (arg === "learning") {
 			el = document.getElementById("LearningTxt");
 			el.classList.remove("active");
 		} else if (arg === "projects") {
@@ -363,6 +377,8 @@ class Navigation extends Component {
 						/>
 
 						<g
+							onClick={() => this.onContact()}
+							className="contact"
 							id="ContactTxt"
 							transform="matrix(0.206947,-2.5416,2.5416,0.206947,-379.453,1235.19)"
 						>
@@ -403,8 +419,11 @@ class Navigation extends Component {
 							</g>
 						</g>
 						<path
+							onClick={() => this.onContact()}
+							onMouseOver={() => this.onHover("contact")}
+							onMouseOut={() => this.onHoverOut("contact")}
 							id="ContactAll"
-							d="M805.565,782.982l-24.121,9.728l-28.38,9.179l-31.399,7.378l-23.457,3.298l-31.958,2.398l-27.485,-0.626l-23.942,-1.289l-19.082,-2.57l-20.497,-3.963l-11.61,-3.444l40.751,-123.589l12.328,2.286l12.526,1.834l15.059,1.36l11.615,0.323l11.891,-0.231l11.093,-1.029l13.027,-1.528l22.006,-4.467l19.46,-6.218l16.083,-6.486l10.488,-5.056l6.034,-2.795l6.864,-3.668l12.878,-7.701l14.389,-10.483l17.966,-14.964l85.255,97.882l-24.046,19.865l-20.99,15.448l-24.009,14.71l-28.737,14.418Z"
+							d="M676.225,883.589l-31.955,13.641l-37.55,13.22l-41.485,11.155l-30.947,5.568l-42.115,4.968l-36.165,0.914l-31.487,-0.133l-25.063,-2.033l-26.896,-3.687l-15.209,-3.586l56.25,-156.922l16.179,2.095l16.448,1.519l19.794,0.77l15.282,-0.314l15.657,-1.022l14.622,-1.97l17.179,-2.712l29.061,-6.939l25.746,-8.97l21.306,-9.095l13.912,-6.965l8.002,-3.864l9.112,-5.006l17.114,-10.416l19.161,-13.986l23.964,-19.802l110.151,117.028l-32.07,26.302l-27.955,20.595l-31.913,19.859l-38.13,19.788Z"
 							style={{ fill: "#9592a8", fillOpacity: "0" }}
 						/>
 
