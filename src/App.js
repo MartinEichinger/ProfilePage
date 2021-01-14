@@ -6,6 +6,7 @@ import Welcome from "./components/Welcome/Welcome";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Learning from "./components/Learning/Learning";
+import Contact from "./components/Contact/Contact";
 import ArrowDown from "./components/common/ArrowDown";
 import "./App.css";
 
@@ -23,6 +24,8 @@ class App extends Component {
 		this.pos4 = 0; //this.clientHeight * 7;
 		this.posLearningRef = React.createRef();
 		this.pos5 = 0; //this.clientHeight * 7;
+		this.posContactRef = React.createRef();
+		this.pos6 = 0; //this.clientHeight * 7;
 	}
 
 	componentDidMount() {
@@ -31,6 +34,7 @@ class App extends Component {
 		this.pos3 = this.posSkillsRef.current.offsetTop;
 		this.pos4 = this.posProjectsRef.current.offsetTop;
 		this.pos5 = this.posLearningRef.current.offsetTop;
+		this.pos6 = this.posContactRef.current.offsetTop;
 	}
 
 	listenToScroll = (event) => {
@@ -77,6 +81,12 @@ class App extends Component {
 				top: this.pos5,
 				behavior: "smooth",
 			});
+		} else if (this.state.theposition < this.pos6) {
+			window.scrollTo({
+				left: 0,
+				top: this.pos6,
+				behavior: "smooth",
+			});
 		}
 	};
 
@@ -112,6 +122,12 @@ class App extends Component {
 				top: this.pos5,
 				behavior: "smooth",
 			});
+		} else if (pos === 5) {
+			window.scrollTo({
+				left: 0,
+				top: this.pos6,
+				behavior: "smooth",
+			});
 		}
 	};
 
@@ -120,8 +136,10 @@ class App extends Component {
 			"App/render: ",
 			this.state.theposition,
 			this.pos4,
-			this.pos5
+			this.pos5,
+			this.pos6
 		);
+
 		return (
 			<div css={this.styleApp} className="App">
 				<Navigation
@@ -149,6 +167,10 @@ class App extends Component {
 				<Learning
 					scroll={this.state.theposition}
 					posRef={this.posLearningRef}
+				/>
+				<Contact
+					scroll={this.state.theposition}
+					posRef={this.posContactRef}
 				/>
 				<ArrowDown onClick={this.onClick} />
 			</div>

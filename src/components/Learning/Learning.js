@@ -11,7 +11,7 @@ const Learning = ({ scroll, posRef }) => {
 	var vwh = document.documentElement.clientHeight;
 
 	const styleLearning = {
-		height: "800vh",
+		height: "900vh",
 		width: "100%",
 		margin: "0px",
 
@@ -27,7 +27,7 @@ const Learning = ({ scroll, posRef }) => {
 
 		"& .row-out": {
 			maxWidth: "1440px",
-			height: "800vh",
+			height: "900vh",
 			marginLeft: "auto",
 			marginRight: "auto",
 			paddingLeft: "2vw",
@@ -63,17 +63,17 @@ const Learning = ({ scroll, posRef }) => {
 	var imgWindow = document.getElementById("img")?.clientWidth - 30;
 	var styleFixImg, styleFixText;
 
-	if (scroll < 20932) {
+	if (scroll < 20776) {
 		styleFixImg = {
 			position: "sticky",
 			width: imgWindow,
 			top: 0.25 * vwh, //'25vh',
 		};
-	} else if (scroll >= 20932) {
+	} else if (scroll >= 20776) {
 		styleFixImg = {
 			position: "sticky",
 			width: imgWindow,
-			top: 0.25 * vwh - (scroll - 20932),
+			top: 0.25 * vwh - (scroll - 20776),
 		};
 	}
 
@@ -98,7 +98,7 @@ const Learning = ({ scroll, posRef }) => {
 		"& section:nth-of-type(6)": { height: vwh },
 		"& section:nth-of-type(7)": { height: vwh },
 		"& section:nth-of-type(8)": { height: vwh },
-		"& section:nth-of-type(9)": { height: vwh },
+		"& section:nth-of-type(9)": { height: 0.5 * vwh },
 	};
 
 	return (
