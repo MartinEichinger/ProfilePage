@@ -66,7 +66,6 @@ class Navigation extends Component {
 	}
 
 	onStart = () => {
-		//console.log("Nav/click/start");
 		this.props.onClick(0);
 	};
 	onWelcome = () => {

@@ -93,7 +93,6 @@ const Skills = ({ scroll, posSkill, posProjects, posRef }) => {
 			border: "5px solid black",
 			backgroundImage:
 				"linear-gradient(to bottom right, white, rgba(3, 103, 134, 1))",
-			//boxShadow: 'inset 0px 0px 3px 3px rgba(100, 100, 100, 1)',
 			zIndex: "0",
 			position: "relative",
 		},

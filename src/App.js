@@ -17,9 +17,9 @@ class App extends Component {
 		this.clientHeight = document.documentElement.clientHeight; //Viewable area height
 		this.pos1 = 0;
 		this.posWelcomeRef = React.createRef();
-		this.pos2 = 0; //this.clientHeight * 1; // + 35;
+		this.pos2 = 0;
 		this.posSkillsRef = React.createRef();
-		this.pos3 = 0; //this.clientHeight * 6; //+ 100;
+		this.pos3 = 0;
 		this.posProjectsRef = React.createRef();
 		this.pos4 = 0; //this.clientHeight * 7;
 		this.posLearningRef = React.createRef();
