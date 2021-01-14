@@ -9,7 +9,7 @@ const Contact = ({ scroll, posRef }) => {
 
 	const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
-	var vwh = document.documentElement.clientHeight;
+	//var vwh = document.documentElement.clientHeight;
 
 	const styleContact = {
 		height: "100vh",
