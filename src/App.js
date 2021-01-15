@@ -70,20 +70,11 @@ class App extends Component {
 	};
 
 	onClick = (dir) => {
-		var {
-			theposition,
-			pos1,
-			pos2,
-			pos3,
-			pos4,
-			pos5,
-			pos6,
-			pos7,
-		} = this.state;
+		var { theposition, pos1, pos2, pos3, pos4, pos5, pos6 } = this.state;
 
 		console.log("geclicked: ", theposition, pos1, pos2, pos3, dir);
 
-		if (dir == "up") theposition -= 1;
+		if (dir === "up") theposition -= 1;
 
 		if (theposition < pos2) {
 			window.scrollTo({
@@ -119,7 +110,7 @@ class App extends Component {
 	};
 
 	onClickPos = (pos) => {
-		var { pos1, pos2, pos3, pos4, pos5, pos6, pos7 } = this.state;
+		var { pos1, pos2, pos3, pos4, pos5, pos6 } = this.state;
 
 		//console.log("App/onClickPos", pos);
 		if (pos === 0) {
