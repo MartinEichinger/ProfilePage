@@ -1,15 +1,16 @@
 /** @jsxImportSource @emotion/react */
 // eslint-disable-next-line
 import { jsx } from "@emotion/react";
-
 import React from "react";
+import { motion } from "framer-motion";
+import fadeInfadeOutFactor from "../common/Utils";
 
-const Contact = ({ scroll, posRef }) => {
+const Contact = ({ scroll, posContact, posEnd, posRef }) => {
 	const breakpoints = [676, 767, 991, 1199, 1600, 2140];
 
 	const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
-	//var vwh = document.documentElement.clientHeight;
+	var vwh = document.documentElement.clientHeight;
 
 	const styleContact = {
 		height: "100vh",
@@ -23,7 +24,6 @@ const Contact = ({ scroll, posRef }) => {
 			top: "2vh",
 			margin: "0 0 0 2vw",
 			color: "rgba(134, 3, 3, 0.2)",
-			//opacity: this.h1Opacity,
 		},
 
 		"& p": {
@@ -59,13 +59,24 @@ const Contact = ({ scroll, posRef }) => {
 
 	return (
 		<div
-			class="contact d-flex flex-column justify-content-center"
+			className="contact d-flex flex-column justify-content-center"
 			ref={posRef}
 			css={styleContact}
 		>
-			<h1>Contact</h1>
-			<div class="row-out row align-items-center">
-				<div class="col-md-6">
+			<motion.h1
+				animate={{
+					opacity: fadeInfadeOutFactor(
+						scroll,
+						posContact,
+						posEnd,
+						vwh
+					),
+				}}
+			>
+				Contact
+			</motion.h1>
+			<div className="row-out row align-items-center">
+				<div className="col-md-6">
 					<p>Here we are...what do you say?</p>
 					<p>
 						You liked what you see? Some fun idea what to do next?
@@ -76,47 +87,38 @@ const Contact = ({ scroll, posRef }) => {
 					</p>
 					<p>Cheers, Ed Madd</p>
 				</div>
-				<div class="col-md-6 d-flex flex-column align-items-center">
-					<div class="header d-flex align-items-center">
+				<div className="col-md-6 d-flex flex-column align-items-center">
+					<div className="header d-flex align-items-center">
 						<p>Contact me!</p>
 					</div>
-					<div class="body">
-						<div class="mb-3 ms-5 me-5">
-							<label for="yourName" class="form-label">
-								Your name
-							</label>
+					<div className="body">
+						<div className="mb-3 ms-5 me-5">
+							<label className="form-label">Your name</label>
 							<input
 								type="text"
-								class="form-control"
+								className="form-control"
 								id="yourNameInput"
 								placeholder="..."
 							/>
 						</div>
-						<div class="mb-3 ms-5 me-5">
-							<label for="yourEmail" class="form-label">
-								Email
-							</label>
+						<div className="mb-3 ms-5 me-5">
+							<label className="form-label">Email</label>
 							<input
 								type="email"
-								class="form-control"
+								className="form-control"
 								id="yourEmailInput"
 								placeholder="name@example.com"
 							/>
 						</div>
-						<div class="mb-3 ms-5 me-5">
-							<label
-								for="exampleFormControlTextarea1"
-								class="form-label"
-							>
-								Your message
-							</label>
+						<div className="mb-3 ms-5 me-5">
+							<label className="form-label">Your message</label>
 							<textarea
-								class="form-control"
+								className="form-control"
 								id="exampleFormControlTextarea1"
 								rows="3"
 							></textarea>
 						</div>
-						<button class="mb-3 bttn">Send</button>
+						<button className="mb-3 bttn">Send</button>
 					</div>
 				</div>
 			</div>

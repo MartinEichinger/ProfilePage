@@ -26,6 +26,7 @@ class App extends Component {
 		this.pos5 = 0; //this.clientHeight * 7;
 		this.posContactRef = React.createRef();
 		this.pos6 = 0; //this.clientHeight * 7;
+		this.pos7 = window.clientHeight;
 	}
 
 	componentDidMount() {
@@ -132,13 +133,13 @@ class App extends Component {
 	};
 
 	render() {
-		console.log(
-			"App/render: ",
-			this.state.theposition,
-			this.pos4,
-			this.pos5,
-			this.pos6
-		);
+		//console.log(
+		//	"App/render: ",
+		//	this.state.theposition,
+		//	this.pos4,
+		//	this.pos5,
+		//	this.pos6
+		//);
 
 		return (
 			<div css={this.styleApp} className="App">
@@ -162,14 +163,19 @@ class App extends Component {
 				<Projects
 					scroll={this.state.theposition}
 					posProjects={this.pos4}
+					posLearning={this.pos5}
 					posRef={this.posProjectsRef}
 				/>
 				<Learning
 					scroll={this.state.theposition}
+					posLearning={this.pos5}
+					posContact={this.pos6}
 					posRef={this.posLearningRef}
 				/>
 				<Contact
 					scroll={this.state.theposition}
+					posContact={this.pos6}
+					posEnd={this.pos7}
 					posRef={this.posContactRef}
 				/>
 				<ArrowDown onClick={this.onClick} />

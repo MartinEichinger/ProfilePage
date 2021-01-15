@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
 // eslint-disable-next-line
 import { jsx } from "@emotion/react";
-
 import React from "react";
+import { motion } from "framer-motion";
+import fadeInfadeOutFactor from "../common/Utils";
 
 const Welcome = ({ scroll, posWelcome, posSkill, posRef }) => {
 	const breakpoints = [676, 767, 991, 1199, 1600, 2140];
@@ -10,16 +11,6 @@ const Welcome = ({ scroll, posWelcome, posSkill, posRef }) => {
 	const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
 	var vwh = document.documentElement.clientHeight;
-
-	var h1Opacity;
-	posSkill -= vwh;
-	if (scroll < posSkill) {
-		h1Opacity = (2 * (scroll - posWelcome / 2)) / posWelcome;
-	} else {
-		h1Opacity = 1 - (12 * (scroll - posSkill)) / posSkill;
-	}
-
-	//console.log("welcome/postions: ", posWelcome, posSkill, scroll, h1Opacity);
 
 	var styleWelcome = {
 		height: "500vh",
@@ -34,7 +25,6 @@ const Welcome = ({ scroll, posWelcome, posSkill, posRef }) => {
 			paddingTop: "2vh",
 			margin: "0 0 0 2vw",
 			color: "rgba(3, 103, 134, 0.2)",
-			opacity: h1Opacity,
 		},
 
 		"& .row-out": {
@@ -78,17 +68,17 @@ const Welcome = ({ scroll, posWelcome, posSkill, posRef }) => {
 	var styleFixImg, styleFixText;
 
 	console.log("Welcome/scroll: ", scroll, posWelcome, posSkill);
-	if (scroll < posSkill) {
+	if (scroll < posSkill - vwh) {
 		styleFixImg = {
 			position: "sticky",
 			width: imgWindow,
 			top: 0.25 * vwh, //'25vh',
 		};
-	} else if (scroll >= posSkill) {
+	} else if (scroll >= posSkill - vwh) {
 		styleFixImg = {
 			position: "sticky",
 			width: imgWindow,
-			top: 0.25 * vwh - (scroll - posSkill),
+			top: 0.25 * vwh - (scroll - (posSkill - vwh)),
 		};
 	}
 
@@ -116,7 +106,18 @@ const Welcome = ({ scroll, posWelcome, posSkill, posRef }) => {
 
 	return (
 		<div css={styleWelcome} ref={posRef}>
-			<h1>Welcome</h1>
+			<motion.h1
+				animate={{
+					opacity: fadeInfadeOutFactor(
+						scroll,
+						posWelcome,
+						posSkill,
+						vwh
+					),
+				}}
+			>
+				Welcome
+			</motion.h1>
 			<div className="row-out row">
 				<div className="col-md-6" id="img">
 					<div className="img" css={styleFixImg}></div>

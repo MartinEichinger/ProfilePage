@@ -3,6 +3,8 @@
 import { jsx } from "@emotion/react";
 import React from "react";
 import "./Skills.css";
+import { motion } from "framer-motion";
+import fadeInfadeOutFactor from "../common/Utils";
 
 const Skills = ({ scroll, posSkill, posProjects, posRef }) => {
 	const breakpoints = [676, 767, 991, 1199, 1600, 2140];
@@ -10,15 +12,6 @@ const Skills = ({ scroll, posSkill, posProjects, posRef }) => {
 	const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 
 	var vwh = document.documentElement.clientHeight;
-
-	var h1Opacity;
-	if (scroll < posProjects - vwh / 2) {
-		h1Opacity = (12 * (scroll - (posSkill - vwh / 2))) / posSkill;
-	} else {
-		h1Opacity = 1 - (24 * (scroll - (posProjects - vwh / 2))) / posProjects;
-	}
-
-	//console.log("skills/postions: ", posSkill, posProjects, scroll, h1Opacity);
 
 	const styleSkills = {
 		height: "100vh",
@@ -39,7 +32,6 @@ const Skills = ({ scroll, posSkill, posProjects, posRef }) => {
 			paddingTop: "2vh",
 			margin: "0 0 0 2vw",
 			color: "rgba(3, 103, 134, 0.2)",
-			opacity: h1Opacity,
 		},
 
 		"& h4": {
@@ -113,7 +105,18 @@ const Skills = ({ scroll, posSkill, posProjects, posRef }) => {
 
 	return (
 		<div className="skills" css={styleSkills} ref={posRef}>
-			<h1>Skills</h1>
+			<motion.h1
+				animate={{
+					opacity: fadeInfadeOutFactor(
+						scroll,
+						posSkill,
+						posProjects,
+						vwh
+					),
+				}}
+			>
+				Skills
+			</motion.h1>
 			<h4>
 				These are the languages, frameworks, libraries, etc. I'm working
 				most...and it's getting more day by day.

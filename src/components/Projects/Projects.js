@@ -2,23 +2,20 @@
 // eslint-disable-next-line
 import { jsx } from "@emotion/react";
 import React, { Component } from "react";
-
 import Cards from "../common/Cards";
+import { motion } from "framer-motion";
+import fadeInfadeOutFactor from "../common/Utils";
 
 class Projects extends Component {
 	constructor(props) {
 		super(props);
-		this.scroll = this.props.scroll;
 		this.posProjects = this.props.posProjects;
+		this.posLearning = this.props.posLearning;
 		this.posRef = this.props.posRef;
 
 		this.breakpoints = [676, 767, 991, 1199, 1600, 2140];
 		this.mq = this.breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
 		this.vwh = document.documentElement.clientHeight;
-
-		this.h1Opacity =
-			(12 * (this.scroll - (this.posProjects - this.vwh / 2))) /
-			this.posProjects;
 
 		this.cards = [
 			{
@@ -116,7 +113,6 @@ class Projects extends Component {
 				paddingTop: "2vh",
 				margin: "0 0 0 2vw",
 				color: "rgba(3, 134, 71, 0.2)",
-				opacity: this.h1Opacity,
 			},
 
 			"& .row-out": {
@@ -172,19 +168,39 @@ class Projects extends Component {
 	}
 
 	renderCards = () => {
-		return this.cards.map((card) => {
-			return <Cards content={card} />;
+		return this.cards.map((card, i) => {
+			return <Cards content={card} key={i} />;
 		});
 	};
 
 	render() {
+		var scroll = this.props.scroll;
+		console.log(
+			"Projects / scroll: ",
+			scroll,
+			this.posProjects,
+			this.posLearning,
+			this.vwh
+		);
+
 		return (
 			<div
 				className="projects"
 				css={this.styleProjects}
 				ref={this.posRef}
 			>
-				<h1>Projects</h1>
+				<motion.h1
+					animate={{
+						opacity: fadeInfadeOutFactor(
+							scroll,
+							this.posProjects,
+							this.posLearning,
+							this.vwh
+						),
+					}}
+				>
+					Projects
+				</motion.h1>
 				<div className="row-out">
 					<div className="d-flex justify-content-around">
 						<button>All</button>

@@ -2,8 +2,10 @@
 // eslint-disable-next-line
 import { jsx } from "@emotion/react";
 import React from "react";
+import { motion } from "framer-motion";
+import fadeInfadeOutFactor from "../common/Utils";
 
-const Learning = ({ scroll, posRef }) => {
+const Learning = ({ scroll, posLearning, posContact, posRef }) => {
 	const breakpoints = [676, 767, 991, 1199, 1600, 2140];
 
 	const mq = breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
@@ -22,7 +24,6 @@ const Learning = ({ scroll, posRef }) => {
 			top: "2vh",
 			margin: "0 0 0 2vw",
 			color: "rgba(3, 134, 71, 0.2)",
-			//opacity: h1Opacity,
 		},
 
 		"& .row-out": {
@@ -103,7 +104,18 @@ const Learning = ({ scroll, posRef }) => {
 
 	return (
 		<div css={styleLearning} ref={posRef}>
-			<h1>Learning path</h1>
+			<motion.h1
+				animate={{
+					opacity: fadeInfadeOutFactor(
+						scroll,
+						posLearning,
+						posContact,
+						vwh
+					),
+				}}
+			>
+				Learning path
+			</motion.h1>
 			<div className="row-out row" css={styleLearning}>
 				<div className="col-md-6">
 					<div className="img" css={styleFixImg}></div>
