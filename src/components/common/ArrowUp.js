@@ -6,7 +6,7 @@ import { useSpring, animated } from "react-spring";
 import { motion } from "framer-motion";
 import fadeInfadeOutFactor from "./Utils";
 
-const ArrowDown = ({ onClick, scroll, posStart, posContact }) => {
+const ArrowUp = ({ onClick, scroll, posWelcome, posEnd }) => {
 	const [resetArrow, setResetArrow] = useState(false);
 
 	const { x } = useSpring({
@@ -19,14 +19,14 @@ const ArrowDown = ({ onClick, scroll, posStart, posContact }) => {
 
 	var vwh = document.documentElement.clientHeight;
 
-	const styleArrowDown = {
+	const styleArrowUp = {
 		color: "rgba(120,120,120,1)",
 		position: "fixed",
-		top: "calc(100vh - 50px)",
+		top: "50px",
 		left: "50vw",
 		marginRight: "auto",
 		zIndex: "10",
-		backgroundImage: "url(ArrowDown.png)",
+		backgroundImage: "url(ArrowUp.png)",
 		backgroundRepeat: "no-repeat",
 		width: "50px",
 		height: "50px",
@@ -58,10 +58,19 @@ const ArrowDown = ({ onClick, scroll, posStart, posContact }) => {
 		"& .char6": { transform: "rotate(145deg)" },
 	};
 
+	console.log(
+		"arrowup: ",
+		scroll,
+		posWelcome,
+		posEnd,
+		vwh,
+		fadeInfadeOutFactor(scroll, posWelcome, posEnd, vwh)
+	);
+
 	return (
 		<motion.div
 			animate={{
-				opacity: fadeInfadeOutFactor(scroll, posStart, posContact, vwh),
+				opacity: fadeInfadeOutFactor(scroll, posWelcome, posEnd, vwh),
 			}}
 		>
 			<animated.div
@@ -73,8 +82,8 @@ const ArrowDown = ({ onClick, scroll, posStart, posContact }) => {
 						})
 						.interpolate((x) => `scale(${x})`),
 				}}
-				css={styleArrowDown}
-				onClick={() => onClick("down")}
+				css={styleArrowUp}
+				onClick={() => onClick("up")}
 			>
 				<div className="badge">
 					<h1>
@@ -91,6 +100,6 @@ const ArrowDown = ({ onClick, scroll, posStart, posContact }) => {
 	);
 };
 
-export default ArrowDown;
+export default ArrowUp;
 
 //<img css={styleArrowDown} src="./ArrowDown.png" />

@@ -9,8 +9,6 @@ import fadeInfadeOutFactor from "../common/Utils";
 class Projects extends Component {
 	constructor(props) {
 		super(props);
-		this.posProjects = this.props.posProjects;
-		this.posLearning = this.props.posLearning;
 		this.posRef = this.props.posRef;
 
 		this.breakpoints = [676, 767, 991, 1199, 1600, 2140];
@@ -174,12 +172,13 @@ class Projects extends Component {
 	};
 
 	render() {
-		var scroll = this.props.scroll;
+		var { scroll, posProjects, posLearning } = this.props;
+
 		console.log(
 			"Projects / scroll: ",
 			scroll,
-			this.posProjects,
-			this.posLearning,
+			posProjects,
+			posLearning,
 			this.vwh
 		);
 
@@ -193,8 +192,8 @@ class Projects extends Component {
 					animate={{
 						opacity: fadeInfadeOutFactor(
 							scroll,
-							this.posProjects,
-							this.posLearning,
+							posProjects,
+							posLearning,
 							this.vwh
 						),
 					}}

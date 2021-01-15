@@ -8,6 +8,7 @@ import Projects from "./components/Projects/Projects";
 import Learning from "./components/Learning/Learning";
 import Contact from "./components/Contact/Contact";
 import ArrowDown from "./components/common/ArrowDown";
+import ArrowUp from "./components/common/ArrowUp";
 import "./App.css";
 
 class App extends Component {
@@ -15,27 +16,39 @@ class App extends Component {
 		super(props);
 		this.state = { theposition: 0 };
 		this.clientHeight = document.documentElement.clientHeight; //Viewable area height
-		this.pos1 = 0;
+		//this.pos1 = 0;
 		this.posWelcomeRef = React.createRef();
-		this.pos2 = 0;
+		//this.pos2 = 0;
 		this.posSkillsRef = React.createRef();
-		this.pos3 = 0;
+		//this.pos3 = 0;
 		this.posProjectsRef = React.createRef();
-		this.pos4 = 0; //this.clientHeight * 7;
+		//this.pos4 = 0; //this.clientHeight * 7;
 		this.posLearningRef = React.createRef();
-		this.pos5 = 0; //this.clientHeight * 7;
+		//this.pos5 = 0; //this.clientHeight * 7;
 		this.posContactRef = React.createRef();
-		this.pos6 = 0; //this.clientHeight * 7;
-		this.pos7 = window.clientHeight;
+		//this.pos6 = 0; //this.clientHeight * 7;
+		//this.pos7 = 20000;
+
+		this.vwh = document.documentElement.clientHeight;
 	}
 
 	componentDidMount() {
+		console.log("App/compDidMount");
 		window.addEventListener("scroll", this.listenToScroll);
-		this.pos2 = this.posWelcomeRef.current.offsetTop;
-		this.pos3 = this.posSkillsRef.current.offsetTop;
-		this.pos4 = this.posProjectsRef.current.offsetTop;
-		this.pos5 = this.posLearningRef.current.offsetTop;
-		this.pos6 = this.posContactRef.current.offsetTop;
+		//this.pos2 = this.posWelcomeRef.current.offsetTop;
+		//this.pos3 = this.posSkillsRef.current.offsetTop;
+		//this.pos4 = this.posProjectsRef.current.offsetTop;
+		//this.pos5 = this.posLearningRef.current.offsetTop;
+		//this.pos6 = this.posContactRef.current.offsetTop;
+		this.setState({
+			pos1: 0,
+			pos2: this.posWelcomeRef.current.offsetTop,
+			pos3: this.posSkillsRef.current.offsetTop,
+			pos4: this.posProjectsRef.current.offsetTop,
+			pos5: this.posLearningRef.current.offsetTop,
+			pos6: this.posContactRef.current.offsetTop,
+			pos7: 30000,
+		});
 	}
 
 	listenToScroll = (event) => {
@@ -56,77 +69,93 @@ class App extends Component {
 		//console.log("App/Position: ", winScroll, height, parseInt(rotation));
 	};
 
-	onClick = (e) => {
-		//console.log("geclicked: ", this.state.theposition, this.pos1, this.pos2, this.pos3);
-		if (this.state.theposition < this.pos2) {
+	onClick = (dir) => {
+		var {
+			theposition,
+			pos1,
+			pos2,
+			pos3,
+			pos4,
+			pos5,
+			pos6,
+			pos7,
+		} = this.state;
+
+		console.log("geclicked: ", theposition, pos1, pos2, pos3, dir);
+
+		if (dir == "up") theposition -= 1;
+
+		if (theposition < pos2) {
 			window.scrollTo({
 				left: 0,
-				top: this.pos2,
+				top: dir === "down" ? pos2 : pos1,
 				behavior: "smooth",
 			});
-		} else if (this.state.theposition < this.pos3) {
+		} else if (theposition < pos3) {
 			window.scrollTo({
 				left: 0,
-				top: this.pos3,
+				top: dir === "down" ? pos3 : pos2,
 				behavior: "smooth",
 			});
-		} else if (this.state.theposition < this.pos4) {
+		} else if (theposition < pos4) {
 			window.scrollTo({
 				left: 0,
-				top: this.pos4,
+				top: dir === "down" ? pos4 : pos3,
 				behavior: "smooth",
 			});
-		} else if (this.state.theposition < this.pos5) {
+		} else if (theposition < pos5) {
 			window.scrollTo({
 				left: 0,
-				top: this.pos5,
+				top: dir === "down" ? pos5 : pos4,
 				behavior: "smooth",
 			});
-		} else if (this.state.theposition < this.pos6) {
+		} else if (theposition < pos6) {
 			window.scrollTo({
 				left: 0,
-				top: this.pos6,
+				top: dir === "down" ? pos6 : pos5,
 				behavior: "smooth",
 			});
 		}
 	};
 
 	onClickPos = (pos) => {
+		var { pos1, pos2, pos3, pos4, pos5, pos6, pos7 } = this.state;
+
 		//console.log("App/onClickPos", pos);
 		if (pos === 0) {
 			window.scrollTo({
 				left: 0,
-				top: this.pos1,
+				top: pos1,
 				behavior: "smooth",
 			});
 		} else if (pos === 1) {
 			window.scrollTo({
 				left: 0,
-				top: this.pos2,
+				top: pos2,
 				behavior: "smooth",
 			});
 		} else if (pos === 2) {
 			window.scrollTo({
 				left: 0,
-				top: this.pos3,
+				top: pos3,
 				behavior: "smooth",
 			});
 		} else if (pos === 3) {
 			window.scrollTo({
 				left: 0,
-				top: this.pos4,
+				top: pos4,
 				behavior: "smooth",
 			});
 		} else if (pos === 4) {
 			window.scrollTo({
 				left: 0,
-				top: this.pos5,
+				top: pos5,
 				behavior: "smooth",
 			});
 		} else if (pos === 5) {
 			window.scrollTo({
 				left: 0,
-				top: this.pos6,
+				top: pos6,
 				behavior: "smooth",
 			});
 		}
@@ -140,9 +169,16 @@ class App extends Component {
 		//	this.pos5,
 		//	this.pos6
 		//);
+		var { pos1, pos2, pos3, pos4, pos5, pos6, pos7 } = this.state;
 
 		return (
 			<div css={this.styleApp} className="App">
+				<ArrowUp
+					onClick={this.onClick}
+					scroll={this.state.theposition}
+					posWelcome={pos2}
+					posEnd={pos7}
+				/>
 				<Navigation
 					onClick={this.onClickPos}
 					rotation={this.state.rotation}
@@ -150,35 +186,40 @@ class App extends Component {
 				<LandingPage />
 				<Welcome
 					scroll={this.state.theposition}
-					posWelcome={this.pos2}
-					posSkill={this.pos3}
+					posWelcome={pos2}
+					posSkill={pos3}
 					posRef={this.posWelcomeRef}
 				/>
 				<Skills
 					scroll={this.state.theposition}
-					posSkill={this.pos3}
-					posProjects={this.pos4}
+					posSkill={pos3}
+					posProjects={pos4}
 					posRef={this.posSkillsRef}
 				/>
 				<Projects
 					scroll={this.state.theposition}
-					posProjects={this.pos4}
-					posLearning={this.pos5}
+					posProjects={pos4}
+					posLearning={pos5}
 					posRef={this.posProjectsRef}
 				/>
 				<Learning
 					scroll={this.state.theposition}
-					posLearning={this.pos5}
-					posContact={this.pos6}
+					posLearning={pos5}
+					posContact={pos6}
 					posRef={this.posLearningRef}
 				/>
 				<Contact
 					scroll={this.state.theposition}
-					posContact={this.pos6}
-					posEnd={this.pos7}
+					posContact={pos6}
+					posEnd={pos7}
 					posRef={this.posContactRef}
 				/>
-				<ArrowDown onClick={this.onClick} />
+				<ArrowDown
+					onClick={this.onClick}
+					scroll={this.state.theposition}
+					posStart={pos1}
+					posContact={pos6}
+				/>
 			</div>
 		);
 	}
