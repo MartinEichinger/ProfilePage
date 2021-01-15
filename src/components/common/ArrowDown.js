@@ -11,8 +11,8 @@ const ArrowDown = ({ onClick, scroll, posStart, posContact }) => {
 
 	const { x } = useSpring({
 		from: { x: 0 },
-		to: { x: 1 },
-		config: { duration: 1000 },
+		to: { x: 3 },
+		config: { duration: 3000 },
 		onRest: () => setResetArrow((state) => !state),
 		reset: resetArrow,
 	});
@@ -22,15 +22,19 @@ const ArrowDown = ({ onClick, scroll, posStart, posContact }) => {
 	const styleArrowDown = {
 		color: "rgba(120,120,120,1)",
 		position: "fixed",
-		top: "calc(100vh - 50px)",
-		left: "50vw",
+		top: "calc(100vh - 120px)",
+		left: "calc(50vw - 60px)",
 		marginRight: "auto",
-		zIndex: "10",
+		zIndex: "200",
 		backgroundImage: "url(ArrowDown.png)",
 		backgroundRepeat: "no-repeat",
-		width: "50px",
-		height: "50px",
+		backgroundColor: "rgba(255,255,255,0.5)",
+		backgroundPosition: "50% 50%",
+		width: "160px",
+		height: "100px",
 		cursor: "pointer",
+		margin: "20px",
+		borderRadius: "30px",
 
 		"& .badge": {
 			position: "relative",
@@ -45,8 +49,8 @@ const ArrowDown = ({ onClick, scroll, posStart, posContact }) => {
 			height: "80px",
 			position: "absolute",
 			width: "25px",
-			left: "60px",
-			top: "-180px",
+			left: "40px",
+			top: "-120px",
 			transformOrigin: "bottom center",
 		},
 
@@ -68,8 +72,30 @@ const ArrowDown = ({ onClick, scroll, posStart, posContact }) => {
 				style={{
 					transform: x
 						.interpolate({
-							range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-							output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+							range: [
+								0,
+								1,
+								1.25,
+								1.35,
+								1.45,
+								1.55,
+								1.65,
+								1.75,
+								2,
+								3,
+							],
+							output: [
+								1,
+								1,
+								0.97,
+								0.9,
+								1.1,
+								0.9,
+								1.1,
+								1.03,
+								1,
+								1,
+							],
 						})
 						.interpolate((x) => `scale(${x})`),
 				}}

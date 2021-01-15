@@ -5,14 +5,15 @@ import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { motion } from "framer-motion";
 import fadeInfadeOutFactor from "./Utils";
+import { SportsRugbySharp } from "@material-ui/icons";
 
 const ArrowUp = ({ onClick, scroll, posWelcome, posEnd }) => {
 	const [resetArrow, setResetArrow] = useState(false);
 
 	const { x } = useSpring({
 		from: { x: 0 },
-		to: { x: 1 },
-		config: { duration: 1000 },
+		to: { x: 3 },
+		config: { duration: 3000 },
 		onRest: () => setResetArrow((state) => !state),
 		reset: resetArrow,
 	});
@@ -22,15 +23,19 @@ const ArrowUp = ({ onClick, scroll, posWelcome, posEnd }) => {
 	const styleArrowUp = {
 		color: "rgba(120,120,120,1)",
 		position: "fixed",
-		top: "50px",
-		left: "50vw",
+		top: "-20px",
+		left: "calc( 50vw - 60px)",
 		marginRight: "auto",
-		zIndex: "10",
+		zIndex: "200",
+		backgroundColor: "rgba(255,255,255,0.5)",
 		backgroundImage: "url(ArrowUp.png)",
 		backgroundRepeat: "no-repeat",
-		width: "50px",
-		height: "50px",
+		backgroundPosition: "50% 50%",
+		width: "160px",
+		height: "100px",
 		cursor: "pointer",
+		margin: "20px",
+		borderRadius: "30px",
 
 		"& .badge": {
 			position: "relative",
@@ -45,8 +50,8 @@ const ArrowUp = ({ onClick, scroll, posWelcome, posEnd }) => {
 			height: "80px",
 			position: "absolute",
 			width: "25px",
-			left: "60px",
-			top: "-180px",
+			left: "40px",
+			top: "-120px",
 			transformOrigin: "bottom center",
 		},
 
@@ -77,8 +82,18 @@ const ArrowUp = ({ onClick, scroll, posWelcome, posEnd }) => {
 				style={{
 					transform: x
 						.interpolate({
-							range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-							output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+							range: [
+								0,
+								0.25,
+								0.35,
+								0.45,
+								0.55,
+								0.65,
+								0.75,
+								1,
+								3,
+							],
+							output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1, 1],
 						})
 						.interpolate((x) => `scale(${x})`),
 				}}

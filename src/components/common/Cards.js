@@ -6,6 +6,7 @@ import React, { Component } from "react";
 import CachedIcon from "@material-ui/icons/Cached";
 import TodayIcon from "@material-ui/icons/Today";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
+import { motion } from "framer-motion";
 
 class Cards extends Component {
 	constructor(props) {
@@ -60,6 +61,7 @@ class Cards extends Component {
 				textAlign: "left",
 				marginLeft: "15px",
 				marginTop: "15px",
+				padding: "0px",
 			},
 
 			"& .flip-card-inner p": {
@@ -182,12 +184,14 @@ class Cards extends Component {
 						</h4>
 						<h1>{title}</h1>
 						<p>{summary}</p>
-						<div
+						<motion.div
 							className="iconleft"
 							onClick={() => this.onClickRotate({ id })}
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.9 }}
 						>
 							<CachedIcon />
-						</div>
+						</motion.div>
 						<div className="iconright">
 							<TodayIcon />
 							{finalDate}
@@ -202,12 +206,14 @@ class Cards extends Component {
 						<h1>Used technologies:</h1>
 						<p>Backend: {backend}</p>
 						<p>Frontend: {frontend}</p>
-						<div
+						<motion.div
 							className="iconleft"
 							onClick={() => this.onClickRotateOut({ id })}
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.9 }}
 						>
 							<CachedIcon />
-						</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>
