@@ -17,7 +17,21 @@ class Projects extends Component {
 
 		this.cards = [
 			{
-				id: "card1",
+				id: "card6",
+				ref: "https://youtu.be/dLU8Gqq8ANA",
+				type: "Web Applicatoin",
+				img: "imageRobotScriptUIEditor.png",
+				cat: "Demo",
+				title: "Robot Script UI Editor",
+				summary: "UI Editor to define robot scripts",
+				finalDate: "01/2021",
+				shortDesc:
+					"With the UI Editor you can drag'n'drop libraries and tasks to define your individual scripts. You can save and load your scripts.",
+				backend: "Django",
+				frontend: "HTML, JS, CSS, Shepherd.js",
+			},
+			{
+				id: "card5",
 				ref: "...",
 				type: "Website",
 				img: "imageEdMadd.png",
@@ -30,7 +44,7 @@ class Projects extends Component {
 				frontend: "React.js, emotion.js, react-spring, HTML, JS, CSS",
 			},
 			{
-				id: "card2",
+				id: "card4",
 				ref: "https://youtu.be/A58HqTbh4iA",
 				type: "Chrome Extension",
 				img: "imageTranslateIt.png",
@@ -61,7 +75,7 @@ class Projects extends Component {
 					"React.js, React/Redux, react-router-dom, material-ui, axios and css-in-js lib emotion",
 			},
 			{
-				id: "card4",
+				id: "card2",
 				ref: "https://youtu.be/OPd7agyAdOM",
 				type: "Web application",
 				img: "imageTwitterLike.png",
@@ -76,7 +90,7 @@ class Projects extends Component {
 				frontend: "Django, JavaScript, CSS",
 			},
 			{
-				id: "card5",
+				id: "card1",
 				ref: "https://cc-ravenous.now.sh/",
 				type: "Web application",
 				img: "imageRavenous.png",
