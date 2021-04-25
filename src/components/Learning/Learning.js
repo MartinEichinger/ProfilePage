@@ -118,57 +118,128 @@ const Learning = ({ scroll, posLearning, posContact, posRef }) => {
 			</motion.h1>
 			<div className="row-out row" css={styleLearning}>
 				<div className="col-md-6">
-					<div className="img" css={styleFixImg}></div>
+					<div
+						className="img"
+						css={styleFixImg}
+					></div>
 				</div>
 				<div className="col-md-6">
-					<div className="text col" css={styleFixText}>
-						<section>
-							<div className="content">
-								<p>After high school...</p>
-							</div>
-						</section>
+					<div
+						className="text col"
+						css={styleFixText}
+					>
 						<section>
 							<div className="content">
 								<p>
-									I start studying electrical engineering and
-									information technology at the TU Munich...
+									After
+									high
+									school...
 								</p>
 							</div>
 						</section>
 						<section>
 							<div className="content">
 								<p>
-									As a freshly started test engineer, I
-									program test automations for HiL test
-									benches with Python...
+									I start
+									studying
+									electrical
+									engineering
+									and
+									information
+									technology
+									at the
+									TU
+									Munich...
 								</p>
 							</div>
 						</section>
 						<section>
 							<div className="content">
 								<p>
-									As my career progressed, I quickly moved
-									away from programming and took on more and
-									more management tasks...
+									As a
+									freshly
+									started
+									test
+									engineer,
+									I
+									program
+									test
+									automations
+									for HiL
+									test
+									benches
+									with
+									Python...
 								</p>
 							</div>
 						</section>
 						<section>
 							<div className="content">
 								<p>
-									After several years, I return to software
-									programming privately and learn HTML, CSS,
-									JADE and SASS on my own to program the
-									website for our sports club...
+									As my
+									career
+									progressed,
+									I
+									quickly
+									moved
+									away
+									from
+									programming
+									and took
+									on more
+									and more
+									management
+									tasks...
 								</p>
 							</div>
 						</section>
 						<section>
 							<div className="content">
 								<p>
-									The enthusiasm remains and so I decide a
-									year ago to devote myself intensively to the
-									study of web development alongside my
+									After
+									several
+									years, I
+									return
+									to
+									software
+									programming
+									privately
+									and
+									learn
+									HTML,
+									CSS,
+									JADE and
+									SASS on
+									my own
+									to
+									program
+									the
+									website
+									for our
+									sports
+									club...
+								</p>
+							</div>
+						</section>
+						<section>
+							<div className="content">
+								<p>
+									The
+									enthusiasm
+									remains
+									and so I
+									decide a
+									year ago
+									to
+									devote
+									myself
+									intensively
+									to the
+									study of
+									web
+									development
+									alongside
+									my
 									work...
 								</p>
 							</div>
@@ -176,16 +247,30 @@ const Learning = ({ scroll, posLearning, posContact, posRef }) => {
 						<section>
 							<div className="content">
 								<p>
-									I start with the Codecademy and the Career
-									Path Web Development...
+									I start
+									with the
+									Codecademy
+									and the
+									Career
+									Path Web
+									Development...
 								</p>
 							</div>
 						</section>
 						<section>
 							<div className="content">
 								<p>
-									Curious to learn more about React.js, I take
-									the course "Mastering React" by Mosh
+									Curious
+									to learn
+									more
+									about
+									React.js,
+									I take
+									the
+									course
+									"Mastering
+									React"
+									by Mosh
 									Hamedani...
 								</p>
 							</div>
@@ -193,9 +278,31 @@ const Learning = ({ scroll, posLearning, posContact, posRef }) => {
 						<section>
 							<div className="content">
 								<p>
-									I am currently studying in the Computer
-									Science for Web Programming Professional
-									Certificate programme from CS50x...
+									For a
+									more
+									academic
+									learning
+									path, I
+									then
+									successfully
+									completed
+									the CS50
+									"Computer
+									Science
+									for Web
+									Programming"
+									programme
+									at
+									HarvardX
+									(edx.org).
+									Currently
+									I am
+									studying
+									media
+									informatics
+									at the
+									ILS
+									Fernschule...
 								</p>
 							</div>
 						</section>
