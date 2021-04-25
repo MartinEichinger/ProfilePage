@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { motion } from "framer-motion";
 import fadeInfadeOutFactor from "./Utils";
-import { SportsRugbySharp } from "@material-ui/icons";
 
 const ArrowUp = ({ onClick, scroll, posWelcome, posEnd }) => {
 	const [resetArrow, setResetArrow] = useState(false);
@@ -75,7 +74,12 @@ const ArrowUp = ({ onClick, scroll, posWelcome, posEnd }) => {
 	return (
 		<motion.div
 			animate={{
-				opacity: fadeInfadeOutFactor(scroll, posWelcome, posEnd, vwh),
+				opacity: fadeInfadeOutFactor(
+					scroll,
+					posWelcome,
+					posEnd,
+					vwh
+				),
 			}}
 		>
 			<animated.div
@@ -93,9 +97,21 @@ const ArrowUp = ({ onClick, scroll, posWelcome, posEnd }) => {
 								1,
 								3,
 							],
-							output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1, 1],
+							output: [
+								1,
+								0.97,
+								0.9,
+								1.1,
+								0.9,
+								1.1,
+								1.03,
+								1,
+								1,
+							],
 						})
-						.interpolate((x) => `scale(${x})`),
+						.interpolate(
+							(x) => `scale(${x})`
+						),
 				}}
 				css={styleArrowUp}
 				onClick={() => onClick("up")}
