@@ -12,7 +12,9 @@ class Projects extends Component {
 		this.posRef = this.props.posRef;
 
 		this.breakpoints = [676, 767, 991, 1199, 1600, 2140];
-		this.mq = this.breakpoints.map((bp) => `@media (max-width: ${bp}px)`);
+		this.mq = this.breakpoints.map(
+			(bp) => `@media (max-width: ${bp}px)`
+		);
 		this.vwh = document.documentElement.clientHeight;
 
 		this.cards = [
@@ -20,7 +22,7 @@ class Projects extends Component {
 				id: "card6",
 				ref: "https://youtu.be/dLU8Gqq8ANA",
 				type: "Web Applicatoin",
-				img: "imageRobotScriptUIEditor.png",
+				img: "imageRobotScriptUIEditor.PNG",
 				cat: "Demo",
 				title: "Robot Script UI Editor",
 				summary: "UI Editor to define robot scripts",
@@ -41,7 +43,8 @@ class Projects extends Component {
 				finalDate: "01/2021",
 				shortDesc: "My profile page.",
 				backend: "-",
-				frontend: "React.js, emotion.js, react-spring, HTML, JS, CSS",
+				frontend:
+					"React.js, emotion.js, react-spring, HTML, JS, CSS",
 			},
 			{
 				id: "card4",
@@ -65,7 +68,8 @@ class Projects extends Component {
 				img: "imagePPlan.png",
 				cat: "Demo",
 				title: "PPlan",
-				summary: "Ressource management tool to plan multiple teams",
+				summary:
+					"Ressource management tool to plan multiple teams",
 				finalDate: "11/2020",
 				shortDesc:
 					"With this ressource management web application different teams can be created and managed. The team members can then be scheduled by project managers in their projects in a weekly chart",
@@ -96,12 +100,14 @@ class Projects extends Component {
 				img: "imageRavenous.png",
 				cat: "Learning",
 				title: "Ravenous",
-				summary: "Responsive search website build with React.js",
+				summary:
+					"Responsive search website build with React.js",
 				finalDate: "04/2020",
 				shortDesc:
 					"Search website to find the best locations in the city of your choice for your search term.",
 				backend: "-",
-				frontend: "Yelp API, React, HTML, JavaScript, CSS",
+				frontend:
+					"Yelp API, React, HTML, JavaScript, CSS",
 			},
 		];
 
