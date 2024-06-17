@@ -102,7 +102,7 @@ const Welcome = ({ scroll, posWelcome, posSkill, posRef }) => {
 		"& section:nth-of-type(5)": { height: 0.5 * vwh },
 	};
 
-	//console.log("welcome/scroll: ",scroll, imgWindow, document.documentElement.clientHeight);
+	//console.log("welcome/scroll: ",scroll, imgWindow, document.documentElement.clientHeight); test
 
 	return (
 		<div css={styleWelcome} ref={posRef}>
@@ -120,26 +120,46 @@ const Welcome = ({ scroll, posWelcome, posSkill, posRef }) => {
 			</motion.h1>
 			<div className="row-out row">
 				<div className="col-md-6" id="img">
-					<div className="img" css={styleFixImg}></div>
+					<div
+						className="img"
+						css={styleFixImg}
+					></div>
 				</div>
 				<div className="col-md-6">
-					<div className="text col" css={styleFixText}>
+					<div
+						className="text col"
+						css={styleFixText}
+					>
 						<section>
 							<div className="content">
 								<p className="mt-5">
-									Hi, my name is "Ed Madd" Martin.
+									Hi, my
+									name is
+									"Ed
+									Madd"
+									Martin.
 								</p>
 							</div>
 						</section>
 						<section>
 							<div className="content">
-								<p>I'm passionate about web development.</p>
+								<p>
+									I'm
+									passionate
+									about
+									web
+									development.
+								</p>
 							</div>
 						</section>
 						<section>
 							<div className="content">
 								<p>
-									Are you? Then check out my site and
+									Are you?
+									Then
+									check
+									out my
+									site and
 									projects!
 								</p>
 							</div>
@@ -147,15 +167,32 @@ const Welcome = ({ scroll, posWelcome, posSkill, posRef }) => {
 						<section>
 							<div className="content">
 								<p>
-									If you like what you see here, have ideas,
-									interesting or funny insights related to web
-									development then let me know.
+									If you
+									like
+									what you
+									see
+									here,
+									have
+									ideas,
+									interesting
+									or funny
+									insights
+									related
+									to web
+									development
+									then let
+									me know.
 								</p>
 							</div>
 						</section>
 						<section>
 							<div className="content">
-								<p>I am already very curious.</p>
+								<p>
+									I am
+									already
+									very
+									curious.
+								</p>
 							</div>
 						</section>
 					</div>
